@@ -40,7 +40,7 @@ if(isset($_GET['action'])){
                 header("Location: recap.php"); exit;
             break;
 
-        case "down-qtt":
+        case "down-qtt": // GET["id"] = URL(recap) && present dans la session(tableau)
                 if(isset($_GET["id"]) && isset($_SESSION["products"][$_GET["id"]])) {
                     $_SESSION["products"][$_GET["id"]]["qtt"]--;
                     if($_SESSION["products"][$_GET["id"]]["qtt"] === 0){
