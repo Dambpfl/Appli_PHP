@@ -1,5 +1,6 @@
 <?php
     require("functions.php");
+    ob_start();
 ?>
 
 <!DOCTYPE html>
@@ -45,3 +46,8 @@
     
 </body>
 </html>
+
+<?php
+$content = ob_get_clean();
+
+require_once "template.php"; ?>
