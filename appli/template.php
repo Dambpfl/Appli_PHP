@@ -7,6 +7,10 @@
     <title>Ajout produit</title>
 </head>
 <body>
-    <?= $content ?>
+    <div id="wrapper">
+
+        <?= $content ?>
+        
+    </div>
 </body>
 </html>
