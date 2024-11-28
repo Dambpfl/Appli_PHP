@@ -1,3 +1,7 @@
+<?php
+    require("functions.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +34,12 @@
         </p>
         <p>
             <input type="submit" name="submit" value="Ajouter le produit">
+        </p>
+        <p>
+            <label>
+                Quantité total :
+                <?= getTotalProducts()?>
+            </label>
         </p>
     </form>
     
