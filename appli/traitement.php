@@ -26,14 +26,30 @@ if(isset($_GET['action'])){
 
     switch($_GET['action']){
         case "delete":
-            
+
             break;
-            case "clear":
+        case "clear":
                 unset($_SESSION["products"]);
+                header("Location: recap.php"); exit;
             break;
-        case "up-qqt":
+
+        case "up-qtt":  
+                if(isset($_GET["id"]) && isset($_SESSION["products"][$_GET["id"]])) {
+                $_SESSION["products"][$_GET["id"]]["qtt"]++;
+                }
+                header("Location: recap.php"); exit;
+            break;
 
         case "down-qtt":
-
+                if(isset($_GET["id"]) && isset($_SESSION["products"][$_GET["id"]])) {
+                    $_SESSION["products"][$_GET["id"]]["qtt"]--;
+                    if($_SESSION["products"][$_GET["id"]]["qtt"] === 0){
+                        unset($_SESSION["products"][$_GET["id"]]);
+                        header("Location: recap.php"); exit;
+                        break;
+                    }   
+                }
+                header("Location: recap.php"); exit;
+                break;
     }
 }
