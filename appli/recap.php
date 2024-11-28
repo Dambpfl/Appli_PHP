@@ -11,7 +11,7 @@
     <title>Récapitulatif des produits</title>
 </head>
 <body>
-    <button onclick="window.location.href = 'index.php'">Page Principal</button>
+    <button class="btnRecap" onclick="window.location.href = 'index.php'">Page Principal</button>
     <?php
         if(!isset($_SESSION["products"]) || empty($_SESSION["products"])){
             echo "<p>Aucun produit en session...</p>";
@@ -36,7 +36,11 @@
                             "<td>".$product['name']."</td>",
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>", // &nbsp; = ESPACE
                             "<td>".$product['qtt']."</td>",
-                            "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                            "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",                            
+                            "<td><a href=traitement.php?action=up-qtt>+</a></td>",
+                            "<td><a href=traitement.php?action=down-qtt>-</a></td>",
+                            "<td><a href=traitement.php?action=delete>x</a></td>",
+                           
                         "</tr>";
                     $totalGeneral += $product['total'];
                     $totalQtt += $product['qtt'];
@@ -49,9 +53,10 @@
                             "<td colspan=4>Total général : </td>",
                             "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
                         "</tr>", 
-                    "</tbody>",
+                        "<td><a href=traitement.php?action=clear>clear</a></td>",
+                        "</tbody>",
                 "</table>";
-        }
+            }
      ?>
 </body>
 </html>

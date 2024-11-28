@@ -1,16 +1,12 @@
 <?php
 session_start();
 
-if(!isset($_SESSION["products"]) || empty($_SESSION["products"])){
-    echo " ";
-}
-else {
-    function getTotalProducts() {
-        $totalQtt = 0;
+function getTotalProducts() {
+    $result = 0;
+    if(isset($_SESSION["products"]) || !empty($_SESSION["products"])){
         foreach ($_SESSION["products"] as $index => $product) {
-                $totalQtt += $product['qtt'];
+            $result += $product['qtt'];
         }
-        return number_format($totalQtt);
     }
-
-}           
+    return number_format($result);
+}

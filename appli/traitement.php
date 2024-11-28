@@ -15,9 +15,25 @@ if (isset($_POST['submit'])){
             "qtt" => $qtt,
             "total" => $price*$qtt
         ];
-        
+
         $_SESSION["products"][] = $product;
     }
 }
 
 header("Location:index.php");
+
+if(isset($_GET['action'])){
+
+    switch($_GET['action']){
+        case "delete":
+            
+            break;
+            case "clear":
+                unset($_SESSION["products"]);
+            break;
+        case "up-qqt":
+
+        case "down-qtt":
+
+    }
+}

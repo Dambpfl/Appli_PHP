@@ -12,12 +12,12 @@
 </head>
 <body>
     <h1>Ajouter un produit</h1>
-    <button onclick="window.location.href = 'recap.php'">Recap</button>
+    <button class="btnNav" onclick="window.location.href = 'recap.php'">Recap</button>
     <form action="traitement.php" method="post">
         <p>
             <label>
                 Nom du produit :
-                <input type="text" name="name">
+                <input type="text" name="name" require>
             </label>
         </p>
         <p>
@@ -38,7 +38,7 @@
         <p>
             <label>
                 Quantité total :
-                <?= getTotalProducts()?>
+                <?= getTotalProducts() ?>
             </label>
         </p>
     </form>
