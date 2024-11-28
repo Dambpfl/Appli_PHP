@@ -43,6 +43,7 @@ if(isset($_GET['action'])){
         case "up-qtt":  
                 if(isset($_GET["id"]) && isset($_SESSION["products"][$_GET["id"]])) {
                     $_SESSION["products"][$_GET["id"]]["qtt"]++;
+                    $_SESSION["products"][$_GET["id"]]["total"] = $_SESSION["products"][$_GET["id"]]["price"] * $_SESSION["products"][$_GET["id"]]["qtt"];
                 }
                 header("Location: recap.php"); exit;
             break;
@@ -50,6 +51,7 @@ if(isset($_GET['action'])){
         case "down-qtt": // GET["id"] = URL(recap) && present dans la session(tableau)
                 if(isset($_GET["id"]) && isset($_SESSION["products"][$_GET["id"]])) {
                     $_SESSION["products"][$_GET["id"]]["qtt"]--;
+                    $_SESSION["products"][$_GET["id"]]["total"] = $_SESSION["products"][$_GET["id"]]["price"] * $_SESSION["products"][$_GET["id"]]["qtt"];
                     if($_SESSION["products"][$_GET["id"]]["qtt"] === 0){
                         unset($_SESSION["products"][$_GET["id"]]);
                         header("Location: recap.php"); exit;

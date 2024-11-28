@@ -37,9 +37,9 @@
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>", // &nbsp; = ESPACE
                             "<td>".$product['qtt']."</td>",
                             "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",                            
-                            "<td><a href='traitement.php?action=up-qtt&id=$index'>+</a></td>",
-                            "<td><a href='traitement.php?action=down-qtt&id=$index'>-</a></td>",
-                            "<td><a href='traitement.php?action=delete&id=$index'>x</a></td>",
+                            "<td><a href='traitement.php?action=up-qtt&id=$index' class='btn-up'>+</a></td>",
+                            "<td><a href='traitement.php?action=down-qtt&id=$index' class='btn-down'>-</a></td>",
+                            "<td><a href='traitement.php?action=delete&id=$index' class='btn-delete'>x</a></td>",
                            
                         "</tr>";
                     $totalGeneral += $product['total'];
@@ -53,9 +53,9 @@
                             "<td colspan=4>Total général : </td>",
                             "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
                         "</tr>", 
-                        "<td><a href=traitement.php?action=clear>clear</a></td>",
+                        "<td><a href=traitement.php?action=clear class='btn-clear'>Clear</a></td>",
                         "</tbody>",
-                "</table>";
+                        "</table>";
             }
      ?>
 </body>
