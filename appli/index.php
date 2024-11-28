@@ -13,7 +13,7 @@
 <body>
     <h1>Ajouter un produit</h1>
     <button class="btnNav" onclick="window.location.href = 'recap.php'">Recap</button>
-    <form action="traitement.php" method="post">
+    <form action="traitement.php?action=add" method="post">
         <p>
             <label>
                 Nom du produit :

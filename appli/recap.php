@@ -37,9 +37,9 @@
                             "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>", // &nbsp; = ESPACE
                             "<td>".$product['qtt']."</td>",
                             "<td>".number_format($product['total'], 2, ",", "&nbsp;")."&nbsp;€</td>",                            
-                            "<td><a href=traitement.php?action=up-qtt&id=$index>+</a></td>",
-                            "<td><a href=traitement.php?action=down-qtt&id=$index>-</a></td>",
-                            "<td><a href=traitement.php?action=delete&id=$index>x</a></td>",
+                            "<td><a href='traitement.php?action=up-qtt&id=$index'>+</a></td>",
+                            "<td><a href='traitement.php?action=down-qtt&id=$index'>-</a></td>",
+                            "<td><a href='traitement.php?action=delete&id=$index'>x</a></td>",
                            
                         "</tr>";
                     $totalGeneral += $product['total'];
