@@ -1,19 +1,7 @@
 <?php
     session_start();
     ob_start();
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Récapitulatif des produits</title>
-</head>
-<body>
-    <button class="btnRecap" onclick="window.location.href = 'index.php'">Page Principal</button>
-    <?php
         if(!isset($_SESSION["products"]) || empty($_SESSION["products"])){
             echo "<p>Aucun produit en session...</p>";
         }
@@ -59,10 +47,9 @@
                         "</table>";
             }
      ?>
-</body>
-</html>
 
 <?php
+$title = "Récap des produits";
 $content = ob_get_clean();
 
 require_once "template.php"; ?>

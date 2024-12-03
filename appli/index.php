@@ -1,19 +1,8 @@
 <?php
-    require("functions.php");
     ob_start();
+    require("functions.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Ajout produit</title>
-</head>
-<body>
-    <h1>Ajouter un produit</h1>
-    <button class="btnIndex" onclick="window.location.href = 'recap.php'">Recap</button>
     <form action="traitement.php?action=add" method="post">
         <p>
             <label>
@@ -44,10 +33,8 @@
         </p>
     </form>
     
-</body>
-</html>
-
 <?php
+$title = "Ajouter un produit";
 $content = ob_get_clean();
 
 require_once "template.php"; ?>
