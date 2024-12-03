@@ -9,11 +9,18 @@
 <body>
     <div id="wrapper">
         <h1><?= $title ?></h1>
+
+        <?php
+            if(isset($_SESSION["messages"])) {
+                echo $_SESSION["messages"];
+                unset($_SESSION["messages"]);
+            }
+        ?>
         <nav>
-                <a href="index.php" class="btnRecap">Menu principal</a>
-                <a href="recap.php" class="btnIndex">Panier</a>  
+            <a href="index.php" class="btnRecap">Menu principal</a>
+            <a href="recap.php" class="btnIndex">Panier</a>  
         </nav>
-        <?= $content ?>
+        <?= $content ?>       
     </div>
 </body>
 </html>

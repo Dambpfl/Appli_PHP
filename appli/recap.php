@@ -2,7 +2,7 @@
     session_start();
     ob_start();
 
-        if(!isset($_SESSION["products"]) || empty($_SESSION["products"])){
+        if(!isset($_SESSION["products"]) || empty($_SESSION["products"])){ // VERIF SI PRODUCTS EXISTE ET SI VIDE
             echo "<p>Aucun produit en session...</p>";
         }
         else {            
@@ -49,6 +49,7 @@
      ?>
 
 <?php
+$message = "Vous avez supprimez un produit";
 $title = "Récap des produits";
 $content = ob_get_clean();
 
