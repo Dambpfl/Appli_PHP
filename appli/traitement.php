@@ -1,29 +1,29 @@
 <?php
-session_start();
+session_start(); // permet d'enregistrer en session
 
 
-if(isset($_GET['action'])){
+if(isset($_GET['action'])){  // si action existe dans l'URL
     
     switch($_GET['action']){
         
         case "add":
             
-            if (isset($_POST['submit'])){
+            if (isset($_POST['submit'])){ // verif si formulaire 'submit'
             
-                $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-                $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-                $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT);
+                $name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_FULL_SPECIAL_CHARS); // filtre dans le nom les caract spéciaux
+                $price = filter_input(INPUT_POST, "price", FILTER_VALIDATE_FLOAT, FILTER_FLAG_ALLOW_FRACTION); // filtre dans le prix le nb à virgule et les "."
+                $qtt = filter_input(INPUT_POST, "qtt", FILTER_VALIDATE_INT); // filtre dans qtt si la valeur est INT
             
-                if($name && $price && $qtt){
+                if($name && $price && $qtt){ // si tout valide après filtre
             
-                    $product = [
+                    $product = [ // crée $produit
                         "name" => $name,
                         "price" => $price,
                         "qtt" => $qtt,
                         "total" => $price*$qtt
                     ];
             
-                    $_SESSION["products"][] = $product;
+                    $_SESSION["products"][] = $product; // ajoute $produit à la session
                 }
             }
 

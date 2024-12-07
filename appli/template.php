@@ -8,19 +8,19 @@
 </head>
 <body>
     <div id="wrapper">
-        <h1><?= $title ?></h1>
+        <h1><?= $title ?></h1> <!-- Ajoute le titre -->
 
         <?php
-            if(isset($_SESSION["messages"])) {
-                echo $_SESSION["messages"];
-                unset($_SESSION["messages"]);
+            if(isset($_SESSION["messages"])) { // verif si 'message'
+                echo $_SESSION["messages"]; // affiche
+                unset($_SESSION["messages"]); // supprime
             }
         ?>
         <nav>
             <a href="index.php" class="btnRecap">Menu principal</a>
             <a href="recap.php" class="btnIndex">Panier</a>  
         </nav>
-        <?= $content ?>       
+        <?= $content ?>   <!-- contenue en temporisation -->
     </div>
 </body>
 </html>
