@@ -1,6 +1,6 @@
 <?php
-    ob_start();
-    require("functions.php");
+    ob_start(); // demarre la temporisation
+    require("functions.php"); // recupère les données de 'functions.php'
 ?>
 
     <form action="traitement.php?action=add" method="post">
@@ -28,13 +28,13 @@
         <p>
             <label>
                 Quantité total :
-                <?= getTotalProducts() ?>
+                <?= getTotalProducts() ?> <!-- Utilise une fonction de 'function.php' -->
             </label>
         </p>
     </form>
     
 <?php
 $title = "Ajouter un produit";
-$content = ob_get_clean();
+$content = ob_get_clean(); // stock les données de la temporisation dans la variable
 
-require_once "template.php"; ?>
+require_once "template.php"; ?> <!-- recupere les données de 'template.php' -->
